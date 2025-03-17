@@ -1,20 +1,3 @@
-
- /* Copyright 2021 Dane Evans
-  *
-  * This program is free software: you can redistribute it and/or modify
-  * it under the terms of the GNU General Public License as published by
-  * the Free Software Foundation, either version 2 of the License, or
-  * (at your option) any later version.
-  *
-  * This program is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU General Public License for more details.
-  *
-  * You should have received a copy of the GNU General Public License
-  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  */
-  // SOFLE RGB
 #include <stdio.h>
 
 #include QMK_KEYBOARD_H
@@ -398,17 +381,9 @@ void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_ENABLE
 
 void keyboard_post_init_user(void) {
-    // Choose the mode that "gradually changes color."
-    // For example, mode(10) is often a Rainbow or Breathing effect,
-    // but you can pick any QMK effect you like:
-    rgblight_mode(10);        // Pick your favorite effect number
-    rgblight_sethsv(HSV_BLUE); // Optionally pick your start color/hue
-    //rgblight_setbrightness(255); // Full brightness, or adjust as needed
+    rgblight_mode(10);
+    rgblight_sethsv(HSV_BLUE);
 }
-
-// We removed all layer-based lighting, so we don't need layer_state_set_user()
-// to set rgblight layer states. If you had other code in there, you can keep it;
-// otherwise you can omit it entirely.
 
 #endif // RGBLIGHT_ENABLE
 
